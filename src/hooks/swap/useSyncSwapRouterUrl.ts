@@ -5,5 +5,6 @@ export type { SwapEventHandlers } from 'state/swap'
 
 export default function useSyncSwapRouterUrl(routerUrl?: string): void {
   const setSwapRouterUrlAtom = useUpdateAtom(swapRouterUrlAtom)
+  // @ts-ignore
   useEffect(() => setSwapRouterUrlAtom(routerUrl), [routerUrl, setSwapRouterUrlAtom])
 }

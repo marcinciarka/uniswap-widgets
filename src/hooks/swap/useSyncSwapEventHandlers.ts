@@ -5,5 +5,6 @@ export type { SwapEventHandlers } from 'state/swap'
 
 export default function useSyncSwapEventHandlers(handlers: SwapEventHandlers): void {
   const setSwapEventHandlersAtom = useUpdateAtom(swapEventHandlersAtom)
+  // @ts-ignore
   useEffect(() => setSwapEventHandlersAtom(handlers), [handlers, setSwapEventHandlersAtom])
 }
